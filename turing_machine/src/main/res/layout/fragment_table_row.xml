@@ -1,0 +1,156 @@
+<RelativeLayout
+		xmlns:android="http://schemas.android.com/apk/res/android"
+		xmlns:tools="http://schemas.android.com/tools"
+		android:layout_width="match_parent"
+		android:layout_height="match_parent"
+		android:id="@+id/table_row"
+		tools:context="com.example.myapplication2.app.FragmentTableRow"
+		android:orientation="horizontal">
+
+
+	<EditText
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:id="@+id/edit_current_state"
+			android:hint="@string/current_state"
+			android:imeOptions="actionNext"
+			android:singleLine="true"
+			android:nextFocusRight="@+id/edit_next"
+			android:focusable="true"
+			android:layout_gravity="center_vertical"
+			android:layout_centerVertical="true"
+			android:layout_alignParentLeft="true"
+			android:layout_alignParentStart="true"
+			android:layout_marginLeft="5dp"
+			android:layout_marginRight="5dp"/>
+
+
+	<LinearLayout
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:orientation="vertical"
+			android:layout_gravity="center_vertical"
+			android:id="@+id/linearLayout"
+			android:layout_centerVertical="true"
+			android:layout_toEndOf="@+id/edit_current_state"
+			android:layout_toRightOf="@+id/edit_current_state"
+			android:layout_toLeftOf="@+id/delete_row"
+			android:layout_toStartOf="@+id/delete_row"
+			android:layout_marginLeft="5dp"
+			android:layout_marginRight="5dp">
+
+
+		<LinearLayout
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:orientation="horizontal">
+
+			<TextView
+					android:layout_width="0dp"
+					android:layout_height="wrap_content"
+					android:textAppearance="?android:attr/textAppearanceLarge"
+					android:text="@string/binary_0"
+					android:layout_weight="1"
+					android:id="@+id/txt_0"
+					android:layout_gravity="center_vertical"/>
+
+			<EditText
+					android:layout_width="0dp"
+					android:layout_height="wrap_content"
+					android:id="@+id/edit_next"
+					android:hint="@string/next_state"
+					android:imeOptions="actionNext"
+					android:nextFocusRight="@+id/edit_next2"
+					android:singleLine="true"
+					android:layout_weight="3"
+					android:layout_gravity="center_vertical"/>
+
+			<Switch
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:id="@+id/switch_data_save"
+					android:layout_gravity="center_vertical"
+					android:layout_weight="1"
+					android:showText="true"
+					android:textOff="0"
+					android:textOn="1"/>
+
+			<Switch
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:id="@+id/switch_next_direction"
+					android:layout_gravity="center_vertical"
+					android:layout_weight="1"
+					android:showText="true"
+					android:textOff="L"
+					android:textOn="R"/>
+		</LinearLayout>
+
+
+		<LinearLayout
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:orientation="horizontal">
+
+			<TextView
+					android:layout_width="0dp"
+					android:layout_height="wrap_content"
+					android:textAppearance="?android:attr/textAppearanceLarge"
+					android:text="@string/binary_1"
+					android:id="@+id/txt_1"
+					android:layout_weight="1"
+					android:layout_gravity="center_vertical"/>
+
+			<EditText
+					android:layout_width="0dp"
+					android:layout_height="wrap_content"
+					android:id="@+id/edit_next2"
+					android:hint="@string/next_state"
+					android:imeOptions="actionNext"
+					android:singleLine="true"
+					android:layout_weight="3"
+					android:layout_gravity="center_vertical"/>
+
+			<Switch
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:id="@+id/switch_data_save2"
+					android:layout_gravity="center_vertical"
+					android:layout_weight="1"
+					android:showText="true"
+					android:textOff="0"
+					android:textOn="1"/>
+
+			<Switch
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:id="@+id/switch_next_direction2"
+					android:layout_gravity="center_vertical"
+					android:layout_weight="1"
+					android:showText="true"
+					android:textOff="L"
+					android:textOn="R"/>
+		</LinearLayout>
+
+	</LinearLayout>
+
+
+	<ImageButton
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:id="@+id/delete_row"
+			android:adjustViewBounds="true"
+			android:padding="0sp"
+			android:scaleType="centerCrop"
+			android:contentDescription="이 행을 삭제"
+			android:src="@android:drawable/ic_menu_close_clear_cancel"
+			android:background="#00ffffff"
+			android:layout_gravity="center_vertical"
+			android:layout_centerVertical="true"
+			android:layout_alignParentRight="true"
+			android:layout_alignParentEnd="true"
+			android:layout_marginLeft="5dp"
+			android:layout_marginRight="5dp"/>
+
+
+</RelativeLayout>

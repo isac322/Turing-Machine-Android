@@ -1,0 +1,16 @@
+<resources>
+	<string name="app_name">Turing Machine</string>
+
+	<string name="add_raw">Add Row</string>
+	<string name="send_table">compile</string>
+	<string name="next_direction_select">L/R</string>
+
+<!-- TODO: Remove or change this placeholder text -->
+	<string name="hello_blank_fragment">Hello blank fragment</string>
+	<string name="next_state">다음 상태</string>
+	<string name="binary_0">0</string>
+	<string name="binary_1">1</string>
+	<string name="current_state">현재 상태</string>
+	<string name="delete_all_row">모두 삭제</string>
+
+</resources>
