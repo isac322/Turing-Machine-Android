@@ -14,11 +14,8 @@ import android.os.ParcelFileDescriptor;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
-import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.Spinner;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import java.io.FileDescriptor;
@@ -26,7 +23,6 @@ import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.HashMap;
 
 
 public class MainActivity extends Activity implements FragmentTableRow.OnFragmentInteractionListener {
@@ -108,6 +104,7 @@ public class MainActivity extends Activity implements FragmentTableRow.OnFragmen
 
 	@Override
 	protected void onResume() {
+		super.onResume();
 		if (mInputStream != null && mOutputStream != null) {
 			return;
 		}
@@ -129,7 +126,6 @@ public class MainActivity extends Activity implements FragmentTableRow.OnFragmen
 		} else {
 			Log.d(TAG, "mAccessory is null");
 		}
-		super.onResume();
 	}
 
 	@Override
@@ -200,6 +196,8 @@ public class MainActivity extends Activity implements FragmentTableRow.OnFragmen
 				.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_CLOSE)
 				.commit();
 		fragments.remove(fragment);
+		fragment = null;
+		System.gc();
 	}
 
 	@Override
@@ -262,24 +260,12 @@ public class MainActivity extends Activity implements FragmentTableRow.OnFragmen
 			result.add(Byte.parseByte(strings[8]));
 		}
 
-		String print = "";
-
 		byte[] dataToSend = new byte[result.size()];
 
 		for (int i = 0; i < result.size(); i++) {
 			dataToSend[i] = result.get(i);
-
-			if (i > 2) {
-				print += String.valueOf(dataToSend[i]) + " ";
-				if ((i - 2) % 5 == 0) {
-					print += '\n';
-				}
-			} else {
-				print += String.valueOf(dataToSend[i]) + '\n';
-			}
 		}
 
-		Toast.makeText(getApplicationContext(), print, Toast.LENGTH_LONG).show();
 
 		return sendTable(dataToSend);
 	}
